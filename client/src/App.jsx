@@ -5,15 +5,22 @@ import StateInspector from './components/layout/StateInspector';
 import CodeViewer from './components/layout/CodeViewer';
 import { PLAYGROUND_MODULES } from './playgrounds/registry';
 
-// Playgrounds
+// Module 1: State Basics
 import StatePlayground, {
   statePlaygroundCode,
   statePlaygroundExplanations,
 } from './playgrounds/01-state-basics/StatePlayground';
+
+// Module 2: Lists & CRUD
+import ListCrudPlayground, {
+  listCrudPlaygroundCode,
+  listCrudPlaygroundExplanations,
+} from './playgrounds/02-list-crud/ListCrudPlayground';
+
 import ModulePlaceholder from './playgrounds/common/ModulePlaceholder';
 
 export default function App() {
-  const [activeModuleId, setActiveModuleId] = useState('state-basics');
+  const [activeModuleId, setActiveModuleId] = useState('list-crud');
   const [activeView, setActiveView] = useState('demo'); // 'demo' | 'code'
   const [isInspectorOpen, setIsInspectorOpen] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,6 +37,8 @@ export default function App() {
     switch (activeModuleId) {
       case 'state-basics':
         return <StatePlayground onStateChange={handleStateChange} />;
+      case 'list-crud':
+        return <ListCrudPlayground onStateChange={handleStateChange} />;
       default:
         return <ModulePlaceholder module={activeModule} />;
     }
@@ -41,6 +50,11 @@ export default function App() {
         return {
           code: statePlaygroundCode,
           explanations: statePlaygroundExplanations,
+        };
+      case 'list-crud':
+        return {
+          code: listCrudPlaygroundCode,
+          explanations: listCrudPlaygroundExplanations,
         };
       default:
         return {
