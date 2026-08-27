@@ -23,10 +23,20 @@ import FormsPlayground, {
   formsPlaygroundExplanations,
 } from './playgrounds/03-forms/FormsPlayground';
 
-import ModulePlaceholder from './playgrounds/common/ModulePlaceholder';
+// Module 4: useEffect & Async API
+import AsyncApiPlayground, {
+  asyncApiPlaygroundCode,
+  asyncApiPlaygroundExplanations,
+} from './playgrounds/04-api-effects/AsyncApiPlayground';
+
+// Module 5: Context API & Global Cart
+import CartPlayground, {
+  cartPlaygroundCode,
+  cartPlaygroundExplanations,
+} from './playgrounds/05-context-cart/CartPlayground';
 
 export default function App() {
-  const [activeModuleId, setActiveModuleId] = useState('forms-validation');
+  const [activeModuleId, setActiveModuleId] = useState('context-cart');
   const [activeView, setActiveView] = useState('demo'); // 'demo' | 'code'
   const [isInspectorOpen, setIsInspectorOpen] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -47,8 +57,12 @@ export default function App() {
         return <ListCrudPlayground onStateChange={handleStateChange} />;
       case 'forms-validation':
         return <FormsPlayground onStateChange={handleStateChange} />;
+      case 'use-effect-api':
+        return <AsyncApiPlayground onStateChange={handleStateChange} />;
+      case 'context-cart':
+        return <CartPlayground onStateChange={handleStateChange} />;
       default:
-        return <ModulePlaceholder module={activeModule} />;
+        return <StatePlayground onStateChange={handleStateChange} />;
     }
   };
 
@@ -69,10 +83,20 @@ export default function App() {
           code: formsPlaygroundCode,
           explanations: formsPlaygroundExplanations,
         };
+      case 'use-effect-api':
+        return {
+          code: asyncApiPlaygroundCode,
+          explanations: asyncApiPlaygroundExplanations,
+        };
+      case 'context-cart':
+        return {
+          code: cartPlaygroundCode,
+          explanations: cartPlaygroundExplanations,
+        };
       default:
         return {
-          code: '// โค้ดจะถูกเพิ่มในขั้นตอนถัดไป',
-          explanations: [],
+          code: statePlaygroundCode,
+          explanations: statePlaygroundExplanations,
         };
     }
   };
