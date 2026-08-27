@@ -47,8 +47,14 @@ import UseReducerPlayground, {
   useReducerPlaygroundExplanations,
 } from './playgrounds/07-use-reducer/UseReducerPlayground';
 
+// Module 8: Custom Hooks Architecture
+import CustomHooksPlayground, {
+  customHooksPlaygroundCode,
+  customHooksPlaygroundExplanations,
+} from './playgrounds/08-custom-hooks/CustomHooksPlayground';
+
 export default function App() {
-  const [activeModuleId, setActiveModuleId] = useState('use-reducer-kanban');
+  const [activeModuleId, setActiveModuleId] = useState('custom-hooks-lab');
   const [activeView, setActiveView] = useState('demo'); // 'demo' | 'code'
   const [isInspectorOpen, setIsInspectorOpen] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -77,6 +83,8 @@ export default function App() {
         return <UseRefPlayground onStateChange={handleStateChange} />;
       case 'use-reducer-kanban':
         return <UseReducerPlayground onStateChange={handleStateChange} />;
+      case 'custom-hooks-lab':
+        return <CustomHooksPlayground onStateChange={handleStateChange} />;
       default:
         return <StatePlayground onStateChange={handleStateChange} />;
     }
@@ -118,6 +126,11 @@ export default function App() {
         return {
           code: useReducerPlaygroundCode,
           explanations: useReducerPlaygroundExplanations,
+        };
+      case 'custom-hooks-lab':
+        return {
+          code: customHooksPlaygroundCode,
+          explanations: customHooksPlaygroundExplanations,
         };
       default:
         return {

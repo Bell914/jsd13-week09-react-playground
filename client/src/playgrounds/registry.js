@@ -95,4 +95,15 @@ export const PLAYGROUND_MODULES = [
     description: 'การจัดการ State ที่ซับซ้อนด้วย useReducer ผ่าน Actions, Dispatchers และ Pure Reducer Function ในรูปแบบ Mini Kanban Board',
     concepts: ['useReducer(reducer, initial)', 'Actions & Payloads', 'Pure Reducer Function', 'Predictable State Transitions'],
   },
+  {
+    id: 'custom-hooks-lab',
+    title: '8. Custom Hooks Architecture',
+    subtitle: 'Reusing Logic with useLocalStorage & useWindowSize',
+    category: PLAYGROUND_CATEGORIES.EXPERT,
+    icon: Puzzle,
+    difficulty: 'Intermediate',
+    difficultyColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+    description: 'การสร้างและสกัด Reusable Stateful Logic ด้วย Custom Hooks: useLocalStorage, useWindowSize, useDebounce, และ useToggle',
+    concepts: ['Custom Hook Conventions', 'useLocalStorage', 'useWindowSize (Responsive)', 'useDebounce & useToggle'],
+  },
 ];
