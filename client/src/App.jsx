@@ -17,10 +17,16 @@ import ListCrudPlayground, {
   listCrudPlaygroundExplanations,
 } from './playgrounds/02-list-crud/ListCrudPlayground';
 
+// Module 3: Forms & Validation
+import FormsPlayground, {
+  formsPlaygroundCode,
+  formsPlaygroundExplanations,
+} from './playgrounds/03-forms/FormsPlayground';
+
 import ModulePlaceholder from './playgrounds/common/ModulePlaceholder';
 
 export default function App() {
-  const [activeModuleId, setActiveModuleId] = useState('list-crud');
+  const [activeModuleId, setActiveModuleId] = useState('forms-validation');
   const [activeView, setActiveView] = useState('demo'); // 'demo' | 'code'
   const [isInspectorOpen, setIsInspectorOpen] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -39,6 +45,8 @@ export default function App() {
         return <StatePlayground onStateChange={handleStateChange} />;
       case 'list-crud':
         return <ListCrudPlayground onStateChange={handleStateChange} />;
+      case 'forms-validation':
+        return <FormsPlayground onStateChange={handleStateChange} />;
       default:
         return <ModulePlaceholder module={activeModule} />;
     }
@@ -55,6 +63,11 @@ export default function App() {
         return {
           code: listCrudPlaygroundCode,
           explanations: listCrudPlaygroundExplanations,
+        };
+      case 'forms-validation':
+        return {
+          code: formsPlaygroundCode,
+          explanations: formsPlaygroundExplanations,
         };
       default:
         return {
