@@ -1,9 +1,20 @@
-import { Zap, ListTodo, FileText, Globe, ShoppingCart, Sparkles } from 'lucide-react';
+import {
+  Zap,
+  ListTodo,
+  FileText,
+  Globe,
+  ShoppingCart,
+  Timer,
+  GitPullRequest,
+  Puzzle,
+  Gauge
+} from 'lucide-react';
 
 export const PLAYGROUND_CATEGORIES = {
   BASICS: 'พื้นฐาน React (Basics)',
   INTERMEDIATE: 'การจัดการข้อมูลและฟอร์ม (Data & Forms)',
   ADVANCED: 'Side Effects & Global State',
+  EXPERT: 'Advanced Hooks & Performance',
 };
 
 export const PLAYGROUND_MODULES = [
@@ -61,5 +72,16 @@ export const PLAYGROUND_MODULES = [
     difficultyColor: 'text-rose-400 bg-rose-500/10 border-rose-500/20',
     description: 'การสร้าง Global Context สำหรับระบบตะกร้าสินค้า ให้ทุกคอมโพเนนต์เข้าถึงข้อมูลได้โดยตรงโดยไม่เกิด Props Drilling',
     concepts: ['createContext', 'useContext', 'Context.Provider', 'Global State Management'],
+  },
+  {
+    id: 'use-ref-dom',
+    title: '6. useRef & DOM Manipulation',
+    subtitle: 'DOM Access, Timers & Mutable References',
+    category: PLAYGROUND_CATEGORIES.EXPERT,
+    icon: Timer,
+    difficulty: 'Intermediate',
+    difficultyColor: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+    description: 'การใช้งาน useRef เข้าถึง DOM โดยตรง, การสร้างตัวจับเวลา Stopwatch โดยไม่ Re-render พร่ำเพรื่อ, และการจำค่า Previous Value',
+    concepts: ['useRef()', 'DOM Access (input.focus())', 'Mutable Variables without Re-render', 'Previous State Tracker'],
   },
 ];

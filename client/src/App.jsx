@@ -35,8 +35,14 @@ import CartPlayground, {
   cartPlaygroundExplanations,
 } from './playgrounds/05-context-cart/CartPlayground';
 
+// Module 6: useRef & DOM Manipulation
+import UseRefPlayground, {
+  useRefPlaygroundCode,
+  useRefPlaygroundExplanations,
+} from './playgrounds/06-use-ref/UseRefPlayground';
+
 export default function App() {
-  const [activeModuleId, setActiveModuleId] = useState('context-cart');
+  const [activeModuleId, setActiveModuleId] = useState('use-ref-dom');
   const [activeView, setActiveView] = useState('demo'); // 'demo' | 'code'
   const [isInspectorOpen, setIsInspectorOpen] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -61,6 +67,8 @@ export default function App() {
         return <AsyncApiPlayground onStateChange={handleStateChange} />;
       case 'context-cart':
         return <CartPlayground onStateChange={handleStateChange} />;
+      case 'use-ref-dom':
+        return <UseRefPlayground onStateChange={handleStateChange} />;
       default:
         return <StatePlayground onStateChange={handleStateChange} />;
     }
@@ -92,6 +100,11 @@ export default function App() {
         return {
           code: cartPlaygroundCode,
           explanations: cartPlaygroundExplanations,
+        };
+      case 'use-ref-dom':
+        return {
+          code: useRefPlaygroundCode,
+          explanations: useRefPlaygroundExplanations,
         };
       default:
         return {
