@@ -1,0 +1,65 @@
+import { Zap, ListTodo, FileText, Globe, ShoppingCart, Sparkles } from 'lucide-react';
+
+export const PLAYGROUND_CATEGORIES = {
+  BASICS: 'พื้นฐาน React (Basics)',
+  INTERMEDIATE: 'การจัดการข้อมูลและฟอร์ม (Data & Forms)',
+  ADVANCED: 'Side Effects & Global State',
+};
+
+export const PLAYGROUND_MODULES = [
+  {
+    id: 'state-basics',
+    title: '1. State & Event Handling',
+    subtitle: 'useState, Functional Updates & Event Listeners',
+    category: PLAYGROUND_CATEGORIES.BASICS,
+    icon: Zap,
+    difficulty: 'Beginner',
+    difficultyColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+    description: 'ทดลองใช้งาน useState พื้นฐาน, การอัปเดต state แบบ functional, การนับก้าว, และ Live Text Mirror',
+    concepts: ['useState', 'Functional Updates', 'Event Handling (onClick, onChange)', 'Batching'],
+  },
+  {
+    id: 'list-crud',
+    title: '2. Lists, Keys & CRUD',
+    subtitle: 'Dynamic Rendering & Immutable State',
+    category: PLAYGROUND_CATEGORIES.INTERMEDIATE,
+    icon: ListTodo,
+    difficulty: 'Intermediate',
+    difficultyColor: 'text-sky-400 bg-sky-500/10 border-sky-500/20',
+    description: 'การเรนเดอร์ Array ด้วย .map(), ความสำคัญของ Unique Key, การทำ CRUD (เพิ่ม/ลบ/แก้ไข) แบบ Immutable',
+    concepts: ['Array .map() / .filter()', 'Unique Keys', 'Immutable Updates (Spread ...)', 'Search & Filter'],
+  },
+  {
+    id: 'forms-validation',
+    title: '3. Forms & Live Validation',
+    subtitle: 'Controlled Inputs & Form Submission',
+    category: PLAYGROUND_CATEGORIES.INTERMEDIATE,
+    icon: FileText,
+    difficulty: 'Intermediate',
+    difficultyColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+    description: 'การทำ Controlled Components, จัดการ Multiple Inputs ใน State เดียว, และ Real-time Form Validation',
+    concepts: ['Controlled Components', 'e.preventDefault()', 'Form Validation', 'Dynamic Object Keys'],
+  },
+  {
+    id: 'use-effect-api',
+    title: '4. useEffect & Async API',
+    subtitle: 'Side Effects & Data Fetching',
+    category: PLAYGROUND_CATEGORIES.ADVANCED,
+    icon: Globe,
+    difficulty: 'Advanced',
+    difficultyColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+    description: 'การใช้งาน useEffect ในการยิง API, การควบคุม Dependency Array, จัดการสถานะ Loading / Error / Retry',
+    concepts: ['useEffect Lifecycle', 'Dependency Array []', 'Fetch API / Async Await', 'Loading & Error States'],
+  },
+  {
+    id: 'context-cart',
+    title: '5. Context API & Global Cart',
+    subtitle: 'State Sharing & Avoiding Props Drilling',
+    category: PLAYGROUND_CATEGORIES.ADVANCED,
+    icon: ShoppingCart,
+    difficulty: 'Advanced',
+    difficultyColor: 'text-rose-400 bg-rose-500/10 border-rose-500/20',
+    description: 'การสร้าง Global Context สำหรับระบบตะกร้าสินค้า ให้ทุกคอมโพเนนต์เข้าถึงข้อมูลได้โดยตรงโดยไม่เกิด Props Drilling',
+    concepts: ['createContext', 'useContext', 'Context.Provider', 'Global State Management'],
+  },
+];
