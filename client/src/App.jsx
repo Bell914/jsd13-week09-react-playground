@@ -41,8 +41,14 @@ import UseRefPlayground, {
   useRefPlaygroundExplanations,
 } from './playgrounds/06-use-ref/UseRefPlayground';
 
+// Module 7: useReducer & Complex State
+import UseReducerPlayground, {
+  useReducerPlaygroundCode,
+  useReducerPlaygroundExplanations,
+} from './playgrounds/07-use-reducer/UseReducerPlayground';
+
 export default function App() {
-  const [activeModuleId, setActiveModuleId] = useState('use-ref-dom');
+  const [activeModuleId, setActiveModuleId] = useState('use-reducer-kanban');
   const [activeView, setActiveView] = useState('demo'); // 'demo' | 'code'
   const [isInspectorOpen, setIsInspectorOpen] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -69,6 +75,8 @@ export default function App() {
         return <CartPlayground onStateChange={handleStateChange} />;
       case 'use-ref-dom':
         return <UseRefPlayground onStateChange={handleStateChange} />;
+      case 'use-reducer-kanban':
+        return <UseReducerPlayground onStateChange={handleStateChange} />;
       default:
         return <StatePlayground onStateChange={handleStateChange} />;
     }
@@ -105,6 +113,11 @@ export default function App() {
         return {
           code: useRefPlaygroundCode,
           explanations: useRefPlaygroundExplanations,
+        };
+      case 'use-reducer-kanban':
+        return {
+          code: useReducerPlaygroundCode,
+          explanations: useReducerPlaygroundExplanations,
         };
       default:
         return {

@@ -84,4 +84,15 @@ export const PLAYGROUND_MODULES = [
     description: 'การใช้งาน useRef เข้าถึง DOM โดยตรง, การสร้างตัวจับเวลา Stopwatch โดยไม่ Re-render พร่ำเพรื่อ, และการจำค่า Previous Value',
     concepts: ['useRef()', 'DOM Access (input.focus())', 'Mutable Variables without Re-render', 'Previous State Tracker'],
   },
+  {
+    id: 'use-reducer-kanban',
+    title: '7. useReducer & Complex State',
+    subtitle: 'Actions, Reducer Functions & State Machines',
+    category: PLAYGROUND_CATEGORIES.EXPERT,
+    icon: GitPullRequest,
+    difficulty: 'Advanced',
+    difficultyColor: 'text-orange-400 bg-orange-500/10 border-orange-500/20',
+    description: 'การจัดการ State ที่ซับซ้อนด้วย useReducer ผ่าน Actions, Dispatchers และ Pure Reducer Function ในรูปแบบ Mini Kanban Board',
+    concepts: ['useReducer(reducer, initial)', 'Actions & Payloads', 'Pure Reducer Function', 'Predictable State Transitions'],
+  },
 ];
